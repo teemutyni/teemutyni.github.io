@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="inverse, scattering, mathematics, math, differential, equation, biharmonic">
+		<meta name="author" content="Teemu Tyni">
+		<title>Homepage of Teemu Tyni</title>
+		
+		<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+		<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="../../style.css">
+
+	</head>
+	
+	<body>
+		<div id="wrapper">
+		
+			<main>
+				<div id="content">
+					<div class="innertube">
+						<h1>Example: an edge-case</h2>
+							 <td>
+								<p>
+								Let us consider a more advanced example where the inverse Born approximation does not work.
+								We study the following (quite complicated) non-linear differential operator<br/>
+								$$H_4u := u^{(4)} + q_\alpha(x)\frac{\sin(|u|)}{|u|}u' + V|u|^2u,$$
+								where $V$ is the characteristic function of the interval $[0,0.5]$ multiplied by $0.5\mathrm{i}$, where $\mathrm{i}$ is the imaginary unit and <br/>
+								$q_\alpha(x)=\frac{1}{2}((x+2.5)^\alpha - x-2.5)$ if $-2.5 < x <-1.5$ and $q_\alpha=0$ otherwise.<br/>
+								<br/>
+								Here the function $q_\alpha$ belongs to the Sobolev space $W_1^1(\mathbb{R})$ for all $0<\alpha \leq 1$.
+								However, the limiting function $q$ as $\alpha\to 0$ has a jump discontinuity at origin and hence does not belong to $W_1^1(\mathbb{R})$.
+								
+								According to our theory [1] we expect the Born approximation to recover the combination $\beta = -\frac{\sin(1)}{2}q_\alpha' + \mathrm{H}(V)$, where $\mathrm{H}$ is the <a href="https://en.wikipedia.org/wiki/Hilbert_transform">Hilbert transform</a> of $V$.
+								(This Hilbert transform appears in the reconstruction, because the function $V$ is complex valued.)
+								
+								Numerically the inverse Born approximation for this operator works reasonably well when $\alpha > 0.3$, but it starts to fail when $\alpha < 0.3$.
+								This shows that the assumption that $q\in W_1^1(\mathbb{R})$ is quite natural.
+								Below is an animation of what happens to the reconstructions as $\alpha\to 0$.<br/>
+								<img src="recofail.gif"/><br/>
+
+								</p>
+							</td>
+								
+								<br/>
+								<br/>
+								<font color="black">
+								[1] Tyni T and Serov V, <em>Inverse scattering problem for quasi-linear perturbation of the biharmonic operator on the line</em>, <a href="http://dx.doi.org/10.3934/ipi.2019009">Inverse Problems & Imaging <b>13</b>:1 (2019), 159-175.</a>
+								</font>
+								</p>
+							</td>
+							
+							
+							
+							
+							
+				</div>
+			</main>
+			
+
+			<nav id="nav">
+				<div class="innertube">
+					<h3><a href="../../">Index</a></h3>
+					<ul>
+						<li><a href="../../research">Research</a></li>
+						<li><a href="../../inverse">Inverse problems</a></li>
+					</ul>
+				</div>
+			</nav>
+			
+		</div>
+		<footer> Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script></footer>
+	</body>
+</html>
